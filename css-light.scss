@@ -1,0 +1,92 @@
+@function hsl-to-rgb($hsl-color) {
+    @return mix($hsl-color,$hsl-color);
+}
+html {
+    box-shadow: inset 0em 0em 3em rgba(255,255,255,.66);
+    height: 100%;
+}
+
+body {
+  background-color: white;
+  animation-duration: 33s;
+  animation-name: light;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  letter-spacing: .66em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 4em;
+  margin-top: 1em;
+  color: white;
+  text-shadow:0px 0px 0 rgb(225,225,225),
+    0px 1px 0 rgb(195,195,195),
+    0px 2px 0 rgb(165,165,165),
+    0px 3px 0 rgb(135,135,135),
+    0px 4px 0 rgb(104,104,104),
+    0px 5px 0 rgb(74,74,74),
+    0px 6px 0 rgb(44,44,44),
+    0px 7px 0 rgb(14,14,14), 
+    0px 8px 0 rgb(16,16,16),
+    0px 9px 8px rgba(0,0,0,1),
+    0px 9px 1px rgba(0,0,0,0.5),
+    0px 0px 8px rgba(0,0,0,.2);
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    -webkit-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern";
+    -moz-font-feature-settings: "kern=1";
+    animation-duration: 22s;
+    animation-name: fade-out;
+    animation-fill-mode: forwards;
+  
+}
+
+// Next step, make this a Sass mixin 
+@keyframes light {
+  0% { 
+    background-color: hsl-to-rgb(hsl(0, 96%, 72%));
+  }
+  10% { 
+    background-color: hsl-to-rgb(hsl(36, 46%, 72%));
+  }
+  20% { 
+    background-color: hsl-to-rgb(hsl(72, 46%, 72%));
+  }
+  30% { 
+    background-color: hsl-to-rgb(hsl(108, 46%, 72%));
+  }
+  40% { 
+    background-color: hsl-to-rgb(hsl(144, 46%, 72%));
+  }
+   50% { 
+    background-color: hsl-to-rgb(hsl(180, 46%, 72%));
+  }
+   60% { 
+    background-color: hsl-to-rgb(hsl(216, 46%, 72%));
+  }
+   70% { 
+    background-color: hsl-to-rgb(hsl(252, 46%, 72%));
+  }
+   80% { 
+    background-color: hsl-to-rgb(hsl(288, 46%, 72%));
+  }
+   90% { 
+    background-color: hsl-to-rgb(hsl(324, 46%, 72%));
+  }
+   100% { 
+    background-color: hsl-to-rgb(hsl(360, 46%, 72%));
+  }
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+    color: rgba(255,255,255,0);
+    text-shadow: none;
+  }
+}
